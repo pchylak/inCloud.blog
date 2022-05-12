@@ -12,7 +12,7 @@ param snet3AddrSpace string
 
 //sekcja modułów
 module resourceGroup1 'rg.bicep' = {
-  name: rgName
+  name: 'rg Deployment'
   params: {
     location: location
     rgName: rgName
@@ -25,7 +25,7 @@ resource resGrp 'Microsoft.Resources/resourceGroups@2021-04-01' existing = {
 }
 
 module vNetwork 'vnet.bicep' = {
-  name: rgName
+  name: 'vNet Deployment'
   scope: resGrp
   params: {
     location: location
