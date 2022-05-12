@@ -134,3 +134,10 @@ New-AzSubscriptionDeployment `
 in this example I used: 
 
 ```azurecli
+az deployment sub create \
+    --name firstBicepDeployment \
+    --subscription 'xxxx-yyyyy-zzzz-yyyy'
+    --template-file main.bicep
+    --parameters location=westeurope rgName=azr-tst-rg vnetName=azr-tst-vnet-001 vnetAddrSpace=10.0.0.0/16 snet1AddrSpace=10.0.0.0/24 snet2AddrSpace=10.0.253.0/24 snet3AddrSpace=10.0.254.0/24
+    --location westeurope
+```
